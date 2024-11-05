@@ -25,10 +25,7 @@ export async function AnswerAgent(messages: CoreMessage[], model: ModelType = 'm
                 execute: RetrieveTool
             })
         },
-        maxSteps: 5,
-        onStepFinish: (step) => {
-            fs.appendFileSync('logs.json', JSON.stringify(step, null, 2))
-        }
+        maxSteps: 5
     });
 
     return result;

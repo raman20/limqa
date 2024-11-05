@@ -8,7 +8,7 @@ LimQA is a compact, search-powered Q&A system inspired by Perplexity AI. It is d
 
 ## Setup and Installation
 
-To get LimQA running locally or on a server, follow these steps:
+To get LimQA running locally, follow these steps:
 
 ### Prerequisites
 
@@ -38,5 +38,29 @@ To get LimQA running locally or on a server, follow these steps:
    pnpm dev
    ```
    after this visit http://localhost:3000 and your local setup is ready.
+
+## Usage Guidelines
+
+LimQA is designed to be an intuitive, minimalistic Q&A system that delivers real-time answers with sources. Follow these steps to use LimQA effectively:
+
+1. **Ask a Question**:
+   - Navigate to the main page at `https://limqa.vercel.app` and enter your query in the input field.
+   - Click **Enter**.
+
+2. **Receiving Responses**:
+   - LimQA will analyze your question and decide whether it requires external search results.
+   - For queries requiring external data, LimQA performs a real-time search and then summarizes the top results, displaying a concise answer with citations.
+   - For straightforward or conversational questions, LimQA may provide an answer directly from the language model without additional sources.
+
+3. **Interpreting Citations**:
+   - When search results are used, citations are included to indicate the sources of the information.
+   - These citations link back to the original sources, providing transparency and credibility for each answer.
+
+### Best Practices
+
+- **Be Specific**: For complex topics, providing specific terms or context can improve response accuracy.
+- **Use Clear Language**: Simple, direct language helps LimQA understand your question better.
+
+LimQA is intended for quick, informed answers rather than extensive research.
 
    

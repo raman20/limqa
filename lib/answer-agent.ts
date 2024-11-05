@@ -3,7 +3,6 @@ import { mistral } from "@ai-sdk/mistral";
 import { systemPrompt } from "./prompt";
 import { SearchTool, RetrieveTool } from "./tools";
 import { searchSchema, retrieveSchema } from "./tools-schema";
-import fs from "fs";
 
 type ModelType = 'mistral-small-latest' | 'mistral-medium-latest';
 

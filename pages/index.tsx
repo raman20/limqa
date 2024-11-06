@@ -1,5 +1,6 @@
 import React, { FormEvent, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { DNA } from 'react-loader-spinner';
 
 export default function Home() {
   const [query, setQuery] = useState('');
@@ -53,9 +54,12 @@ export default function Home() {
         {conversations.map((conv, index) => (
           <div key={index} className="chat-message">
             <p className="question"><strong>You:</strong> {conv.question}</p>
-            <div className="answer">
-              <ReactMarkdown>{conv.answer}</ReactMarkdown>
-            </div>
+            {
+              isLoading ? <DNA/> : 
+              <div className="answer">
+                <ReactMarkdown>{conv.answer}</ReactMarkdown>
+              </div>
+            }
           </div>
         ))}
       </div>

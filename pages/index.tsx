@@ -16,7 +16,7 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!query) return;
+    if (!query || query.length > 50) return;
 
     const newConversation = { question: query, answer: '' };
     setConversations((prev) => [...prev, newConversation]);
@@ -28,6 +28,10 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query })
       });
+
+      if (!res.ok) {
+        throw new Error('Network response was not ok');
+      }
 
       const reader = res.body!.getReader();
       const decoder = new TextDecoder();
@@ -46,7 +50,7 @@ export default function Home() {
     } catch (error) {
       setConversations((prev) => {
         const updatedConversations = [...prev];
-        updatedConversations[updatedConversations.length - 1].answer = '#Oops! Something went wrong. Please try again later.';
+        updatedConversations[updatedConversations.length - 1].answer = '**Oops! Something went wrong. Please try again later.**';
         return updatedConversations;
       });
     } finally {
@@ -77,7 +81,7 @@ export default function Home() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ask anything..."
+          placeholder="Ask anything... upto 50 chars"
           className="input"
           disabled={isLoading}
         />

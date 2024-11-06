@@ -21,7 +21,7 @@ export const RetrieveTool = async ({ url }: { url: string }) => {
 
         return {
             title: content?.title,
-            content: content?.textContent,
+            content: content?.textContent.slice(0, 10000),
             url
         }
     } catch (error) {

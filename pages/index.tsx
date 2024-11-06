@@ -55,7 +55,7 @@ export default function Home() {
           <div key={index} className="chat-message">
             <p className="question"><strong>You:</strong> {conv.question}</p>
             {
-              isLoading ? <DNA/> : 
+              isLoading && index == conversations.length - 1 ? <DNA/> : 
               <div className="answer">
                 <ReactMarkdown>{conv.answer}</ReactMarkdown>
               </div>

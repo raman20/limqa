@@ -6,13 +6,6 @@ export default function Home() {
   const [query, setQuery] = useState('');
   const [conversations, setConversations] = useState<{ question: string; answer: string; }[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!isLoading && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isLoading]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -77,7 +70,6 @@ export default function Home() {
 
       <form onSubmit={handleSubmit} className="chat-input">
         <input
-          ref={inputRef}
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}

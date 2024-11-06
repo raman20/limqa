@@ -62,3 +62,53 @@ LimQA is designed to be an intuitive, minimalistic Q&A system that delivers real
 - **Use Clear Language**: Simple, direct language helps LimQA understand your question better.
 
 LimQA is intended for quick, informed answers rather than extensive research.
+
+## Navigating the project
+
+### Directory Structure
+
+``` bash
+├── lib
+│   ├── answer-agent.ts
+│   ├── prompt.ts
+│   ├── tools-schema.ts
+│   └── tools.ts
+├── pages
+│   ├── _app.tsx
+│   ├── api
+│   │   └── ask.ts
+│   └── index.tsx
+├── styles
+│   └── global.css
+├── .env
+└── package.json
+└── tsconfig.json
+└── README.md
+```
+
+### `lib/`
+This directory contains utility functions and schemas used throughout the application.
+
+- **`answer-agent.ts`**: Implements the `AnswerAgent` function, which processes user queries and interacts with external tools for searching and retrieving content.
+- **`prompt.ts`**: Contains the system prompt used to guide the behavior of the AI model.
+- **`tools-schema.ts`**: Defines schemas for validating input parameters for the search and retrieve tools using Zod.
+- **`tools.ts`**: Implements the `SearchTool` and `RetrieveTool` functions for searching the web and retrieving content from URLs.
+
+### `pages/`
+This directory contains the application's pages and API routes.
+
+- **`_app.tsx`**: Custom App component for Next.js, which wraps all pages and includes global styles and analytics.
+- **`index.tsx`**: The main page of the application, which includes the chat interface for user interaction.
+- **`api/ask.ts`**: API route that handles incoming requests for user queries, validates them, and processes them using the `AnswerAgent`.
+
+### `styles/`
+This directory contains global styles for the application.
+
+- **`global.css`**: Contains the CSS styles that apply to the entire application, including layout and component styles.
+
+### `.env`
+This file contains environment variables used in the application, such as API keys for external services.
+
+### `package.json`
+This file contains metadata about the project, including dependencies, scripts, and version information.
+

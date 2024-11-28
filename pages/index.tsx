@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { DNA } from 'react-loader-spinner';
+import Head from 'next/head';
 
 export default function Home() {
   const [query, setQuery] = useState('');
@@ -9,7 +10,10 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!query || query.length > 50) return;
+    if (!query || query.length > 150) {
+      alert("Please enter a valid query (1-150 characters).");
+      return;
+    }
 
     const newConversation = { question: query, answer: '' };
     setConversations((prev) => [...prev, newConversation]);

@@ -78,7 +78,7 @@ export default function Home() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ask anything... up to 50 chars"
+          placeholder="Ask anything... up to 150 chars"
           className="input"
           disabled={isLoading}
         />

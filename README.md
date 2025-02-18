@@ -2,6 +2,8 @@
 
 ### Real-Time Answers with Relevant Souces
 
+<a href="https://ibb.co/yFjZ2955"><img src="https://i.ibb.co/HT8bZSYY/Screenshot-2025-02-19-000014.png" alt="Screenshot-2025-02-19-000014" border="0"></a>
+
 ## Overview
 
 LimQA is a compact, search-powered Q&A system inspired by Perplexity AI. It is designed to deliver concise, accurate answers to user queries by combining the strengths of a language model (LLM) with real-time web search capabilities. LimQA processes user questions, intelligently determines whether external search data is required, and presents a response with relevant citations, making it both informative and credible.
